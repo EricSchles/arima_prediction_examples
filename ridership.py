@@ -20,8 +20,7 @@ df.index.name=None
 
 df.columns = ['riders']
 df['riders'] = df.riders.apply(lambda x: int(x) * 100)
-import code
-code.interact(local=locals())
+
 model = sm.tsa.statespace.SARIMAX(df.riders, trend='n', order=(0, 1, 0), seasonal_order=(0, 1, 1, 12))
 results = model.fit()
 df['forecast'] = results.predict(start = 102, end = 114, dynamic = True)
