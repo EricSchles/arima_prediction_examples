@@ -1,3 +1,4 @@
+#http://statsmodels.sourceforge.net/devel/examples/notebooks/generated/tsa_arma_0.html - example comes from
 import numpy as np
 from scipy import stats
 import pandas as pd
