@@ -23,5 +23,6 @@ df['riders'] = df.riders.apply(lambda x: int(x) * 100)
 
 model = sm.tsa.statespace.SARIMAX(df.riders, trend='n', order=(0, 1, 0), seasonal_order=(0, 1, 1, 12))
 results = model.fit()
-df['forecast'] = results.predict(start = 102, end = 114, dynamic = True)
-
+df['forecast'] = results.predict(start = 102, end = 190, dynamic = True)
+df[['riders', 'forecast']].plot(figsize=(12, 8))
+plt.show()
